@@ -1,0 +1,122 @@
+.SearchBarContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 26px;
+}
+
+.SearchBar {
+  padding-left: 22px;
+  width: 620px;
+  height: 60px;
+  border-radius: 20px;
+  background: var(--container-bg-color-20);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchTitle {
+  margin-top: 3px;
+  font-weight: 400;
+  font-size: 10px;
+  height: 18px;
+  color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  line-height: 13.62px;
+}
+
+.SearchInput {
+  margin-top: 2px;
+  height: 18px;
+  border: none;
+  background: none;
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21.79px;
+  padding: 0px
+}
+
+.SearchInput:focus {
+  outline: none;
+}
+
+.SearchButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #6C40B5;
+  border: none;
+  margin-left: 20px;
+}
+
+.SearchButton:hover {
+  background-color: #7D4FC0;
+}
+
+.SearchButton:active {
+  background-color: #5A3390;
+}
+
+@media (prefers-color-scheme: dark) {
+  .SearchButton {
+    background-color: #28124D;
+  }
+
+  .SearchButton:hover {
+    background-color: #3A1A6A;
+  }
+
+  .SearchButton:active {
+    background-color: #1A0D3A;
+  }
+}
+
+.SearchIcon {
+  width: 34px;
+  height: 34px;
+  color: white;
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .SearchBarContainer {
+    padding-top: 19px;
+  }
+
+  .SearchBar {
+    width: 310px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .SearchTitle {
+    font-size: 8px;
+    height: 12px;
+    line-height: 10.9px;
+  }
+
+  .SearchInput {
+    margin-top: 0.33px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 16.34px;
+  }
+
+  .SearchButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .SearchIcon {
+    width: 22.67px;
+    height: 22.67px;
+  }
+}

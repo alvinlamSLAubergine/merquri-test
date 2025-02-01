@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --text-color: black;
+  --container-bg-color-20: rgba(255, 255, 255, 0.2)
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: white;
+    --container-bg-color: #1A1A1A;
+  }
 }
 
 code {

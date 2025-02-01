@@ -1,10 +1,13 @@
 import './App.css';
 import { BackgroundContainer } from './components';
+import { SearchBar } from './components/search-bar/search-bar';
 
 function App() {
   return (
     <div className='App'>
-      <BackgroundContainer>Test</BackgroundContainer>
+      <BackgroundContainer>
+        <SearchBar />
+      </BackgroundContainer>
     </div>
   );
 }
