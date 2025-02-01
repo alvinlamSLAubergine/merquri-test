@@ -1,0 +1,47 @@
+.Typography {
+  height: 18px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21.79px;
+  color: var(--text-color);
+}
+
+.Bold {
+  font-weight: 700;
+}
+
+.Large {
+  height: 81px;
+  font-size: 97px;
+  font-weight: 700;
+  line-height: 81px;
+}
+
+.Secondary {
+  color: #666666;
+}
+
+.Purple {
+  color: #6C40B5;
+}
+
+/* For dark mode */
+@media (prefers-color-scheme: dark) {
+  .Typography, .Secondary, .Purple {
+    color: white;
+  }
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .Typography {
+    font-size: 14px;
+    line-height: 19.07px;
+  }
+
+  .Large {
+    font-size: 60px;
+    line-height: 50px;
+    height: 50px;
+  }
+}

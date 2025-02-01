@@ -1,5 +1,6 @@
 .Background {
   height: 100vh;
+  overflow: scroll;
   background-image: url("../../assets/bg-light.png");  
 }
 

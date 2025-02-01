@@ -1,0 +1,113 @@
+.WeatherDetailsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 112px;
+}
+
+.WeatherIcon {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 2;
+  right: 40px;
+  top: -95px;
+}
+
+.WeatherDetails {
+  width: 700px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+  background-color: var(--container-bg-color-20);
+  backdrop-filter: blur(20px);
+  display: flex;
+  padding-top: 46px;
+  padding-bottom: 26px;
+}
+
+.WeatherDetailsDefault {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  flex-grow: 1;
+}
+
+.WeatherDetailsSM {
+  display: none;
+  flex-direction: column;
+  padding-right: 26px;
+  align-items: flex-end;
+  text-align: right;
+  justify-content: flex-end;
+  gap: 12px
+}
+
+.Temperature {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.WeatherTextBottomDefault {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.WeatherTextBottomSM {
+  display: none;
+  margin-top: 10.8px;
+}
+
+/* For dark mode */
+@media (prefers-color-scheme: dark) {
+  .WeatherDetails {
+    border: none;
+  }
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .WeatherDetailsContainer {
+    margin-top: 139px;
+  }
+
+  .WeatherIcon {
+    width: 157px;
+    height: 157px;
+    right: 23px;
+    top: -68px;
+  }
+
+  .WeatherDetails {
+    width: 360px;
+    padding-top: 20px;
+    border-radius: 20px;
+    padding-bottom: 20.65px;
+  }
+
+  .WeatherDetailsDefault {
+    padding-left: 26px;
+    padding-right: 0px;
+    width: 100px;
+  }
+
+  .WeatherDetailsSM {
+    display: flex;
+  }
+
+  .Temperature {
+    margin-top: 7px;
+    margin-bottom: 11.86px;
+  }
+
+  .WeatherTextBottomDefault {
+    display: none;
+  }
+
+  .WeatherTextBottomSM {
+    display: block;
+  }
+}

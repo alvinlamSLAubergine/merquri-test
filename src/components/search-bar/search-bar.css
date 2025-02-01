@@ -6,7 +6,6 @@
 }
 
 .SearchBar {
-  padding-left: 22px;
   width: 620px;
   height: 60px;
   border-radius: 20px;
@@ -17,6 +16,7 @@
 }
 
 .SearchTitle {
+  margin-left: 22px;
   margin-top: 3px;
   font-weight: 400;
   font-size: 10px;
@@ -28,6 +28,7 @@
 }
 
 .SearchInput {
+  margin-left: 22px;
   margin-top: 2px;
   height: 18px;
   border: none;
@@ -72,6 +73,10 @@
 
 /* For dark mode */
 @media (prefers-color-scheme: dark) {
+  .SearchTitle {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
   .SearchButton {
     background-color: #28124D;
   }
