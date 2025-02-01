@@ -1,0 +1,26 @@
+.Background {
+  height: 100vh;
+  background-image: url("../../assets/bg-light.png");  
+}
+
+@media (prefers-color-scheme: dark) {
+  .Background {
+    background-image: url("../../assets/bg-dark.png");
+  }
+}
+
+/* For laptops/desktops and above */
+@media screen and (min-width: 768px) {
+  .Background {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .Background {
+    background-size: cover;
+    background-repeat: no-repeat;
+  } 
+}

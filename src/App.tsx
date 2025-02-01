@@ -1,17 +1,10 @@
 import './App.css';
-import bgImage from './assets/bg-light.png';
+import { BackgroundContainer } from './components';
 
 function App() {
   return (
     <div className='App'>
-      <div
-        className='Background'
-        style={{
-          backgroundImage: `url(${bgImage})`,
-        }}
-      >
-        Test
-      </div>
+      <BackgroundContainer>Test</BackgroundContainer>
     </div>
   );
 }
