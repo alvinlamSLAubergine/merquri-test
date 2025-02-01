@@ -2,9 +2,7 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": [
-    "@nx",
-    "@typescript-eslint",
-    "unused-imports"
+    "@typescript-eslint"
   ],
   "extends": [
     "eslint:recommended",
@@ -12,60 +10,11 @@
   ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "scope:root",
-                "onlyDependOnLibsWithTags": [
-                  "scope:root"
-                ]
-              },
-              {
-                "sourceTag": "scope:common",
-                "onlyDependOnLibsWithTags": [
-                  "scope:common",
-                  "scope:root"
-                ]
-              },
-              {
-                "sourceTag": "scope:app",
-                "onlyDependOnLibsWithTags": [
-                  "scope:app",
-                  "scope:common",
-                  "scope:root"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {}
-    },
-    {
       "files": [
         "*.ts",
         "*.tsx",
         "*.js",
         "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nx/typescript",
-        "plugin:@nx/javascript"
       ],
       "rules": {
         "no-unused-vars": "off",
