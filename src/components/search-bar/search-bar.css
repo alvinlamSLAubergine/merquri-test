@@ -64,6 +64,13 @@
   background-color: #5A3390;
 }
 
+.SearchIcon {
+  width: 34px;
+  height: 34px;
+  color: white;
+}
+
+/* For dark mode */
 @media (prefers-color-scheme: dark) {
   .SearchButton {
     background-color: #28124D;
@@ -76,12 +83,6 @@
   .SearchButton:active {
     background-color: #1A0D3A;
   }
-}
-
-.SearchIcon {
-  width: 34px;
-  height: 34px;
-  color: white;
 }
 
 /* For tablets and below */

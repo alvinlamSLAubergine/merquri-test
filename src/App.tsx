@@ -1,6 +1,5 @@
 import './App.css';
-import { BackgroundContainer } from './components';
-import { SearchBar } from './components/search-bar/search-bar';
+import { BackgroundContainer, SearchBar } from './components';
 
 function App() {
   return (
