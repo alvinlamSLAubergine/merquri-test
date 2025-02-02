@@ -30,7 +30,7 @@ function App() {
       {initWeather && (
         <SearchProvider
           currentWeather={initWeather}
-          searchHistory={[]}
+          searchHistory={JSON.parse(localStorage.getItem('searchHistory') ?? '[]')}
         >
           <BackgroundContainer>
             <SearchBar />

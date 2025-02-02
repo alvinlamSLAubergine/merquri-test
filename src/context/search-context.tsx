@@ -61,21 +61,25 @@ function searchReducer(state: SearchState, action: SearchAction): SearchState {
   switch (action.type) {
     case 'SEARCH':
       const weather = action.payload as Weather;
+      const newSearchHistory = updateSearchHistory(
+        {
+          id: generateId(),
+          city: weather.city,
+          country: weather.country,
+          date: weather.date,
+        },
+        state.searchHistory
+      );
+
+      localStorage.setItem('searchHistory', JSON.stringify(newSearchHistory));
       return {
         ...state,
         currentWeather: weather,
-        searchHistory: updateSearchHistory(
-          {
-            id: generateId(),
-            city: weather.city,
-            country: weather.country,
-            date: weather.date,
-          },
-          state.searchHistory
-        ),
+        searchHistory: newSearchHistory,
       };
     case 'DELETE_SEARCH':
       const searchHistory = state.searchHistory.filter((search) => search.id !== action.payload);
+      localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
       return { ...state, searchHistory };
     default:
       return state;
