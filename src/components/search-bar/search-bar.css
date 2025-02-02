@@ -82,6 +82,7 @@
   text-align: left;
   padding-left: 22px;
   margin-top: 6px;
+  min-height: 18px;
 }
 
 /* For dark mode */

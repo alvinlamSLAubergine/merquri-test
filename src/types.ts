@@ -3,3 +3,15 @@ export type SearchHistory = {
   country: string;
   date: Date;
 };
+
+export type Weather = {
+  city: string;
+  country: string;
+  date: Date;
+  temperature: number;
+  description: string;
+  descriptionId: number;
+  high: number;
+  low: number;
+  humidity: number;
+};
