@@ -1,13 +1,7 @@
 .Background {
   height: 100vh;
   overflow: scroll;
-  background-image: url("../../assets/bg-light.png");  
-}
-
-@media (prefers-color-scheme: dark) {
-  .Background {
-    background-image: url("../../assets/bg-dark.png");
-  }
+  background-image: var(--background-image);
 }
 
 /* For laptops/desktops and above */

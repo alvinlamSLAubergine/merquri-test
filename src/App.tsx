@@ -3,6 +3,7 @@ import { getWeather } from './api';
 import './App.css';
 import { BackgroundContainer, SearchBar, SearchHistory, WeatherDetails } from './components';
 import { SearchProvider } from './context';
+import { ThemeProvider } from './context/theme-context';
 import { Weather } from './types';
 
 const defaultWeather = {
@@ -32,12 +33,14 @@ function App() {
           currentWeather={initWeather}
           searchHistory={JSON.parse(localStorage.getItem('searchHistory') ?? '[]')}
         >
-          <BackgroundContainer>
-            <SearchBar />
-            <WeatherDetails>
-              <SearchHistory />
-            </WeatherDetails>
-          </BackgroundContainer>
+          <ThemeProvider>
+            <BackgroundContainer>
+              <SearchBar />
+              <WeatherDetails>
+                <SearchHistory />
+              </WeatherDetails>
+            </BackgroundContainer>
+          </ThemeProvider>
         </SearchProvider>
       )}
     </div>

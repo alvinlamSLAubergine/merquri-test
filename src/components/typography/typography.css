@@ -21,30 +21,19 @@
 }
 
 .Secondary {
-  color: #666666;
+  color: var(--typography-color-secondary);
 }
 
 .Purple {
-  color: #6C40B5;
+  color: var(--typography-color-purple);
+}
+
+.SubtitleColor {
+  color: var(--typography-subtitle-color);
 }
 
 .Error {
-  color: #c62828;
-}
-
-/* For dark mode */
-@media (prefers-color-scheme: dark) {
-  .Typography, .Secondary, .Purple {
-    color: white;
-  }
-
-  .SubtitleColor {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  .Error {
-    color: #ef5350;
-  }
+  color: var(--typography-color-error);
 }
 
 /* For tablets and below */

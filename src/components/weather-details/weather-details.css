@@ -15,7 +15,7 @@
 
 .WeatherDetails {
   width: 700px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: var(--weather-details-border);
   border-radius: 40px;
   background-color: var(--container-bg-color-20);
   backdrop-filter: blur(20px);
@@ -70,13 +70,6 @@
   background-color: var(--container-bg-color-20);
   border-radius: 24px;
   margin-bottom: 26px;
-}
-
-/* For dark mode */
-@media (prefers-color-scheme: dark) {
-  .WeatherDetails {
-    border: none;
-  }
 }
 
 /* For tablets and below */

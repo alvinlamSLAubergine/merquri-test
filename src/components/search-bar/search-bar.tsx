@@ -3,6 +3,7 @@ import { getWeather } from '../../api';
 import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
 import { useSearchContext } from '../../context';
 import { Typography } from '../typography';
+import { LightModeToggle } from './light-mode-toggle';
 import './search-bar.css';
 
 export const SearchBar: React.FC = () => {
@@ -51,6 +52,7 @@ export const SearchBar: React.FC = () => {
         >
           <SearchIcon className='SearchIcon' />
         </button>
+        <LightModeToggle />
       </div>
       <div className='ErrorMessageContainer'>
         <div className='ErrorMessage'>

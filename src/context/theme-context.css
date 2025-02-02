@@ -1,0 +1,41 @@
+.ThemeContainer {
+  --text-color: black;
+  --container-bg-color-20: rgba(255, 255, 255, 0.2);
+  --container-bg-color-40: rgba(255, 255, 255, 0.4);
+  --typography-color-secondary: #666666;
+  --typography-color-purple: #6C40B5;
+  --typography-color-error: #c62828;
+  --typography-subtitle-color: black;
+  --search-button-bg-color: #6C40B5;
+  --search-button-bg-color-hover: #7D4FC0;
+  --search-button-bg-color-active: #5A2E9E;
+  --search-title-color: rgba(0, 0, 0, 0.4);
+  --weather-details-border: 1px solid rgba(255, 255, 255, 0.5);
+  --list-icon-button-bg-color: white;
+  --list-icon-button-bg-color-hover: #f5f5f5;
+  --list-icon-button-bg-color-active: #e8e8e8;
+  --list-icon-button-border: none;
+  --list-icon-color: rgba(0, 0, 0, 0.5);
+  --background-image: url("../assets/bg-light.png");
+}
+
+.Dark {
+  --text-color: white;
+  --container-bg-color-20: rgba(26, 26, 26, 0.3);
+  --container-bg-color-40: rgba(26, 26, 26, 0.5);
+  --typography-color-secondary: white;
+  --typography-color-purple: white;
+  --typography-color-error: #ef5350;
+  --typography-subtitle-color: rgba(255, 255, 255, 0.5);
+  --search-button-bg-color: #28124D;
+  --search-button-bg-color-hover: #3A1A6A;
+  --search-button-bg-color-active: #1A0D3A;
+  --search-title-color: rgba(255, 255, 255, 0.4);
+  --weather-details-border: none;
+  --list-icon-button-bg-color: rgba(26, 26, 26, 0.5);
+  --list-icon-button-bg-color-hover: rgba(255, 255, 255, 0.5);
+  --list-icon-button-bg-color-active: rgba(255, 255, 255, 0.3);
+  --list-icon-button-border: 2px solid rgba(255, 255, 255, 0.5);
+  --list-icon-color: rgba(255, 255, 255, 0.5);
+  --background-image: url("../assets/bg-dark.png");
+}

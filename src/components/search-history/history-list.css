@@ -40,41 +40,22 @@
   cursor: pointer;
   margin-left: 10px;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
-  background-color: white;
+  background-color: var(--list-icon-button-bg-color);
+  border: var(--list-icon-button-border);
 }
 
 .IconButton:hover {
-  background-color: #f5f5f5;
+  background-color: var(--list-icon-button-bg-color-hover);
 }
 
 .IconButton:active {
-  background-color: #e8e8e8;
+  background-color: var(--list-icon-button-bg-color-active);
 }
 
 .Icon {
   width: 20px;
   height: 20px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-/* For dark mode */
-@media (prefers-color-scheme: dark) {
-  .IconButton {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(26, 26, 26, 0.5);
-  }
-
-  .IconButton:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .IconButton:active {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .Icon {
-    color: rgba(255, 255, 255, 0.5);
-  }
+  color: var(--list-icon-color);
 }
 
 /* For tablets and below */

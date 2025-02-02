@@ -6,7 +6,7 @@
 }
 
 .SearchBar {
-  width: 620px;
+  width: 540px;
   height: 60px;
   border-radius: 20px;
   background: var(--container-bg-color-20);
@@ -21,7 +21,7 @@
   font-weight: 400;
   font-size: 10px;
   height: 18px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--search-title-color);
   display: flex;
   align-items: center;
   line-height: 13.62px;
@@ -52,17 +52,17 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: #6C40B5;
+  background-color: var(--search-button-bg-color);
   border: none;
   margin-left: 20px;
 }
 
 .SearchButton:hover {
-  background-color: #7D4FC0;
+  background-color: var(--search-button-bg-color-hover);
 }
 
 .SearchButton:active {
-  background-color: #5A3390;
+  background-color: var(--search-button-bg-color-active);
 }
 
 .SearchIcon {
@@ -85,25 +85,6 @@
   min-height: 18px;
 }
 
-/* For dark mode */
-@media (prefers-color-scheme: dark) {
-  .SearchTitle {
-    color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .SearchButton {
-    background-color: #28124D;
-  }
-
-  .SearchButton:hover {
-    background-color: #3A1A6A;
-  }
-
-  .SearchButton:active {
-    background-color: #1A0D3A;
-  }
-}
-
 /* For tablets and below */
 @media screen and (max-width: 768px) {
   .SearchBarContainer {
@@ -111,7 +92,7 @@
   }
 
   .SearchBar {
-    width: 310px;
+    width: 260px;
     height: 40px;
     border-radius: 8px;
   }
@@ -135,6 +116,7 @@
     width: 40px;
     height: 40px;
     border-radius: 8px;
+    margin-left: 10px;
   }
 
   .SearchIcon {
