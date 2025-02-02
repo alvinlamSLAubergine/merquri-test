@@ -28,6 +28,10 @@
   color: #6C40B5;
 }
 
+.Error {
+  color: #c62828;
+}
+
 /* For dark mode */
 @media (prefers-color-scheme: dark) {
   .Typography, .Secondary, .Purple {
@@ -36,6 +40,10 @@
 
   .SubtitleColor {
     color: rgba(255, 255, 255, 0.5);
+  }
+
+  .Error {
+    color: #ef5350;
   }
 }
 

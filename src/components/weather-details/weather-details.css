@@ -1,7 +1,7 @@
 .WeatherDetailsContainer {
   display: flex;
   justify-content: center;
-  margin-top: 112px;
+  margin-top: 100px;
 }
 
 .WeatherIcon {
@@ -82,7 +82,7 @@
 /* For tablets and below */
 @media screen and (max-width: 768px) {
   .WeatherDetailsContainer {
-    margin-top: 139px;
+    margin-top: 119px;
   }
 
   .WeatherIcon {

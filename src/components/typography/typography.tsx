@@ -3,7 +3,7 @@ import './typography.css';
 
 interface Props extends PropsWithChildren {
   variant?: 'normal' | 'bold' | 'large' | 'subtitle';
-  color?: 'primary' | 'secondary' | 'purple' | 'subtitle';
+  color?: 'primary' | 'secondary' | 'purple' | 'subtitle' | 'error';
 }
 
 export const Typography: React.FC<Props> = ({ variant = 'normal', color = 'primary', children }) => {
@@ -19,6 +19,7 @@ export const Typography: React.FC<Props> = ({ variant = 'normal', color = 'prima
     ['secondary']: 'Secondary',
     ['purple']: 'Purple',
     ['subtitle']: 'SubtitleColor',
+    ['error']: 'Error',
   }[color];
 
   const className = `Typography ${variantName} ${colorName}`;

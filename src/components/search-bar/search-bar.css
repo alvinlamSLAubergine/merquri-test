@@ -71,6 +71,19 @@
   color: white;
 }
 
+.ErrorMessageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ErrorMessage {
+  width: 700px;
+  text-align: left;
+  padding-left: 22px;
+  margin-top: 6px;
+}
+
 /* For dark mode */
 @media (prefers-color-scheme: dark) {
   .SearchTitle {
@@ -106,6 +119,7 @@
     font-size: 8px;
     height: 12px;
     line-height: 10.9px;
+    margin-left: 11px;
   }
 
   .SearchInput {
@@ -113,6 +127,7 @@
     font-size: 12px;
     height: 12px;
     line-height: 16.34px;
+    margin-left: 11px;
   }
 
   .SearchButton {
@@ -124,5 +139,10 @@
   .SearchIcon {
     width: 24px;
     height: 24px;
+  }
+
+  .ErrorMessage {
+    width: 360px;
+    padding-left: 11px;
   }
 }
