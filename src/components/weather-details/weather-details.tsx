@@ -1,16 +1,29 @@
 import { PropsWithChildren } from 'react';
+import CloudIcon from '../../assets/cloud.png';
 import SunIcon from '../../assets/sun.png';
+import { useSearchContext } from '../../context';
 import { Typography } from '../typography';
 import './weather-details.css';
 
+const getWeatherIcon = (descriptionId: number) => {
+  const sunnyDescriptionIds = [800, 801, 802, 500];
+  if (sunnyDescriptionIds.includes(descriptionId)) {
+    return SunIcon;
+  }
+  return CloudIcon;
+};
+
 export const WeatherDetails: React.FC<PropsWithChildren> = ({ children }) => {
+  const { currentWeather } = useSearchContext();
+  const { city, country, date, temperature, high, low, humidity, description, descriptionId } = currentWeather;
+
   return (
     <div className='WeatherDetailsContainer'>
       <div className='WeatherDetails'>
         <div className='WeatherDetailsHeader'>
           <img
             className='WeatherIcon'
-            src={SunIcon}
+            src={getWeatherIcon(descriptionId)}
           />
           <div className='WeatherDetailsDefault'>
             <Typography>Today's Weather</Typography>
@@ -19,20 +32,20 @@ export const WeatherDetails: React.FC<PropsWithChildren> = ({ children }) => {
                 variant='large'
                 color='purple'
               >
-                26°
+                {temperature}°
               </Typography>
             </div>
-            <Typography>H: 29° L: 26°</Typography>
+            <Typography>{`H: ${high}° L: ${low}°`}</Typography>
             <div className='WeatherTextBottomDefault'>
               <Typography
                 variant='bold'
                 color='secondary'
               >
-                Johor, MY
+                {`${city}, ${country}`}
               </Typography>
-              <Typography color='secondary'>01-09-2022 09:41am</Typography>
-              <Typography color='secondary'>Humidity: 58%</Typography>
-              <Typography color='secondary'>Clouds</Typography>
+              <Typography color='secondary'>{date.toLocaleString()}</Typography>
+              <Typography color='secondary'>{`Humidity: ${humidity}%`}</Typography>
+              <Typography color='secondary'>{description}</Typography>
             </div>
             <div className='WeatherTextBottomSM'>
               <Typography

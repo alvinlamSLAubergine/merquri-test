@@ -15,3 +15,10 @@ export type Weather = {
   low: number;
   humidity: number;
 };
+
+export type Geolocation = {
+  name: string;
+  lat: number;
+  lon: number;
+  country: string;
+};
