@@ -1,21 +1,20 @@
 import { createContext, PropsWithChildren, useContext, useReducer } from 'react';
 import { SearchHistory, Weather } from '../types';
 
-interface Props extends PropsWithChildren, Omit<SearchState, 'errorMessage'> {}
+interface Props extends PropsWithChildren, SearchState {}
 
 interface SearchState {
   currentWeather: Weather;
   searchHistory: SearchHistory[];
-  errorMessage: string;
 }
 
 interface SearchAction {
   type: 'SEARCH' | 'DELETE_SEARCH';
-  payload: string;
+  payload: Weather | string;
 }
 
 interface SearchContext extends SearchState {
-  search: (payload: string) => void;
+  search: (payload: Weather) => void;
   deleteSearch: (payload: string) => void;
 }
 
@@ -32,7 +31,6 @@ const defaultContext: SearchContext = {
     humidity: 0,
   },
   searchHistory: [],
-  errorMessage: '',
   search: () => {},
   deleteSearch: () => {},
 };
@@ -44,14 +42,13 @@ export const SearchProvider: React.FC<Props> = ({ children, currentWeather, sear
   const [searchState, dispatch] = useReducer(searchReducer, {
     currentWeather,
     searchHistory,
-    errorMessage: '',
   });
 
   return (
     <SearchContext.Provider
       value={{
         ...searchState,
-        search: (payload: string) => dispatch({ type: 'SEARCH', payload }),
+        search: (payload: Weather) => dispatch({ type: 'SEARCH', payload }),
         deleteSearch: (payload: string) => dispatch({ type: 'DELETE_SEARCH', payload }),
       }}
     >
@@ -63,10 +60,20 @@ export const SearchProvider: React.FC<Props> = ({ children, currentWeather, sear
 function searchReducer(state: SearchState, action: SearchAction): SearchState {
   switch (action.type) {
     case 'SEARCH':
-      if (!action.payload) {
-        return { ...state, errorMessage: 'Please enter a city' };
-      }
-      return { ...state, errorMessage: '' };
+      const weather = action.payload as Weather;
+      return {
+        ...state,
+        currentWeather: weather,
+        searchHistory: updateSearchHistory(
+          {
+            id: generateId(),
+            city: weather.city,
+            country: weather.country,
+            date: weather.date,
+          },
+          state.searchHistory
+        ),
+      };
     case 'DELETE_SEARCH':
       const searchHistory = state.searchHistory.filter((search) => search.id !== action.payload);
       return { ...state, searchHistory };
@@ -74,3 +81,30 @@ function searchReducer(state: SearchState, action: SearchAction): SearchState {
       return state;
   }
 }
+
+const MAX_HISTORY = 10;
+const updateSearchHistory = (newEntry: SearchHistory, searchHistory: SearchHistory[]) => {
+  const lastHistory = searchHistory[0];
+  const newHistory = [...searchHistory];
+  if (!(newEntry.city === lastHistory?.city && newEntry.country === lastHistory?.country)) {
+    newHistory.unshift(newEntry);
+  }
+
+  if (newHistory.length > MAX_HISTORY) {
+    return newHistory.slice(0, MAX_HISTORY);
+  }
+  return newHistory;
+};
+
+const generateId = () => {
+  const date = new Date();
+  return Date.UTC(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds(),
+    date.getMilliseconds()
+  ).toString();
+};

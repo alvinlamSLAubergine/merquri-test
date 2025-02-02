@@ -52,14 +52,14 @@ export const WeatherDetails: React.FC<PropsWithChildren> = ({ children }) => {
                 variant='bold'
                 color='secondary'
               >
-                Johor, MY
+                {`${city}, ${country}`}
               </Typography>
             </div>
           </div>
           <div className='WeatherDetailsSM'>
-            <Typography color='secondary'>Clouds</Typography>
-            <Typography color='secondary'>Humidity: 58%</Typography>
-            <Typography color='secondary'>01-09-2022 09:41am</Typography>
+            <Typography color='secondary'>{description}</Typography>
+            <Typography color='secondary'>{`Humidity: ${humidity}%`}</Typography>
+            <Typography color='secondary'>{date.toLocaleString()}</Typography>
           </div>
         </div>
         {children && <div className='WeatherDetailsChildren'>{children}</div>}

@@ -1,5 +1,6 @@
 export type SearchHistory = {
   id: string;
+  city: string;
   country: string;
   date: Date;
 };

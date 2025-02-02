@@ -17,24 +17,26 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({ history, onSearch, onDelete }) => {
+  const { country, city, date } = history;
+
   return (
     <li className='ListItem'>
       <div className='ListItemText'>
-        <Typography>{history.country}</Typography>
+        <Typography>{`${city}, ${country}`}</Typography>
         <Typography
           variant='subtitle'
           color='subtitle'
         >
-          01-09-2022 09:41am
+          {date.toLocaleString()}
         </Typography>
       </div>
       <div className='ListItemTextSM'>
-        <Typography>{history.country}</Typography>
+        <Typography>{`${city}, ${country}`}</Typography>
         <Typography
           variant='subtitle'
           color='subtitle'
         >
-          01-09-2022 09:41am
+          {date.toLocaleString()}
         </Typography>
       </div>
       <button

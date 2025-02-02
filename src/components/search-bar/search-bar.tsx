@@ -1,20 +1,29 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { getWeather } from '../../api';
 import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
 import { useSearchContext } from '../../context';
 import { Typography } from '../typography';
 import './search-bar.css';
 
 export const SearchBar: React.FC = () => {
-  const { search, errorMessage } = useSearchContext();
+  const [errorMessage, setErrorMessage] = useState('');
+  const { search } = useSearchContext();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSearch = () => {
     if (inputRef.current?.value) {
       const city = inputRef.current.value;
-      search(city);
+      getWeather(city).then((weather) => {
+        if (weather) {
+          search(weather);
+          setErrorMessage('');
+        } else {
+          setErrorMessage(`City "${city}" not found`);
+        }
+      });
     } else {
       inputRef.current?.focus();
-      search('');
+      setErrorMessage('Please enter a city');
     }
   };
 
@@ -29,6 +38,11 @@ export const SearchBar: React.FC = () => {
             className='SearchInput'
             type='text'
             placeholder='Search for a city (e.g. London / Paris, FR)'
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSearch();
+              }
+            }}
           />
         </div>
         <button
