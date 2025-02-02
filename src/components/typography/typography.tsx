@@ -2,8 +2,8 @@ import { PropsWithChildren } from 'react';
 import './typography.css';
 
 interface Props extends PropsWithChildren {
-  variant?: 'normal' | 'bold' | 'large';
-  color?: 'primary' | 'secondary' | 'purple';
+  variant?: 'normal' | 'bold' | 'large' | 'subtitle';
+  color?: 'primary' | 'secondary' | 'purple' | 'subtitle';
 }
 
 export const Typography: React.FC<Props> = ({ variant = 'normal', color = 'primary', children }) => {
@@ -11,12 +11,14 @@ export const Typography: React.FC<Props> = ({ variant = 'normal', color = 'prima
     ['normal']: 'Normal',
     ['bold']: 'Bold',
     ['large']: 'Large',
+    ['subtitle']: 'Subtitle',
   }[variant];
 
   const colorName = {
     ['primary']: 'Primary',
     ['secondary']: 'Secondary',
     ['purple']: 'Purple',
+    ['subtitle']: 'SubtitleColor',
   }[color];
 
   const className = `Typography ${variantName} ${colorName}`;

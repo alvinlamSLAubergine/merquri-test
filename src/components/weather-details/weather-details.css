@@ -19,6 +19,9 @@
   border-radius: 40px;
   background-color: var(--container-bg-color-20);
   backdrop-filter: blur(20px);
+}
+
+.WeatherDetailsHeader {
   display: flex;
   padding-top: 46px;
   padding-bottom: 26px;
@@ -61,6 +64,14 @@
   margin-top: 10.8px;
 }
 
+.WeatherDetailsChildren {
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: var(--container-bg-color-20);
+  border-radius: 24px;
+  margin-bottom: 26px;
+}
+
 /* For dark mode */
 @media (prefers-color-scheme: dark) {
   .WeatherDetails {
@@ -83,8 +94,11 @@
 
   .WeatherDetails {
     width: 360px;
-    padding-top: 20px;
     border-radius: 20px;
+  }
+
+  .WeatherDetailsHeader {
+    padding-top: 20px;
     padding-bottom: 20.65px;
   }
 
@@ -109,5 +123,11 @@
 
   .WeatherTextBottomSM {
     display: block;
+  }
+
+  .WeatherDetailsChildren {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 24px;
   }
 }

@@ -1,0 +1,94 @@
+.HistoryList {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--container-bg-color-40);
+  margin-bottom: 18px;
+  height: 60px;
+  border-radius: 16px;
+  padding-left: 21px;
+  padding-right: 15px;
+}
+
+.ListItemText {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ListItemTextSM {
+  flex-grow: 1;
+  display: none;
+  text-align: left;
+}
+
+.IconButton {
+  border: none;
+  border-radius: 100%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+  background-color: white;
+}
+
+.IconButton:hover {
+  background-color: #f5f5f5;
+}
+
+.IconButton:active {
+  background-color: #e8e8e8;
+}
+
+.Icon {
+  width: 20px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* For dark mode */
+@media (prefers-color-scheme: dark) {
+  .IconButton {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(26, 26, 26, 0.5);
+  }
+
+  .IconButton:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .IconButton:active {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .Icon {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .ListItem {
+    padding-left: 10px;
+    padding-right: 7.28px;
+  }
+
+  .ListItemText {
+    display: none;
+  }
+
+  .ListItemTextSM {
+    display: block;
+  }
+}

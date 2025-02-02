@@ -1,12 +1,14 @@
 import './App.css';
-import { BackgroundContainer, SearchBar, WeatherDetails } from './components';
+import { BackgroundContainer, SearchBar, SearchHistory, WeatherDetails } from './components';
 
 function App() {
   return (
     <div className='App'>
       <BackgroundContainer>
         <SearchBar />
-        <WeatherDetails />
+        <WeatherDetails>
+          <SearchHistory />
+        </WeatherDetails>
       </BackgroundContainer>
     </div>
   );

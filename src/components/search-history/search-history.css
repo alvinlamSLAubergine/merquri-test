@@ -1,0 +1,25 @@
+.SearchHistoryContainer {
+  padding-top: 23px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 23px;
+}
+
+.SearchHistoryTitle {
+  text-align: left;
+  margin-bottom: 26px;
+  margin-left: 6px;
+}
+
+/* For tablets and below */
+@media screen and (max-width: 768px) {
+  .SearchHistoryContainer {
+    padding-top: 22px;
+    padding-left: 17px;
+    padding-right: 13px;
+  }
+
+  .SearchHistoryTitle {
+    margin-left: 3px;
+  }
+}

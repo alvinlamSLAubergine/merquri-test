@@ -1,8 +1,6 @@
 .Typography {
-  height: 18px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 21.79px;
   color: var(--text-color);
 }
 
@@ -15,6 +13,11 @@
   font-size: 97px;
   font-weight: 700;
   line-height: 81px;
+}
+
+.Subtitle {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .Secondary {
@@ -30,6 +33,10 @@
   .Typography, .Secondary, .Purple {
     color: white;
   }
+
+  .SubtitleColor {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 /* For tablets and below */
@@ -43,5 +50,10 @@
     font-size: 60px;
     line-height: 50px;
     height: 50px;
+  }
+
+  .Subtitle {
+    font-size: 10px;
+    line-height: 13.62px;
   }
 }
