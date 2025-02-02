@@ -7,6 +7,8 @@ import './search-history.css';
 
 export const SearchHistory: React.FC = () => {
   const { searchHistory, search, deleteSearch } = useSearchContext();
+  console.log(searchHistory);
+
   const handleSearch = (history: History) => {
     getWeather(history.city).then((weather) => {
       if (weather) {

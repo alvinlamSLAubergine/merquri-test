@@ -4,7 +4,7 @@ import './App.css';
 import { BackgroundContainer, SearchBar, SearchHistory, WeatherDetails } from './components';
 import { SearchProvider } from './context';
 import { ThemeProvider } from './context/theme-context';
-import { Weather } from './types';
+import { SearchHistory as SearchHistoryType, Weather } from './types';
 
 const defaultWeather = {
   city: 'City',
@@ -16,6 +16,14 @@ const defaultWeather = {
   high: 0,
   low: 0,
   humidity: 0,
+};
+
+const getStoredSearchHistory = () => {
+  const searchHistory = JSON.parse(localStorage.getItem('searchHistory') ?? '[]') as SearchHistoryType[];
+  return searchHistory.map((history) => ({
+    ...history,
+    date: new Date(history.date),
+  }));
 };
 
 function App() {
@@ -31,7 +39,7 @@ function App() {
       {initWeather && (
         <SearchProvider
           currentWeather={initWeather}
-          searchHistory={JSON.parse(localStorage.getItem('searchHistory') ?? '[]')}
+          searchHistory={getStoredSearchHistory()}
         >
           <ThemeProvider>
             <BackgroundContainer>
