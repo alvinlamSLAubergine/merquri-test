@@ -16,7 +16,8 @@ const ThemeContext = createContext<ThemeContext>({
 
 export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [state, dispatch] = useReducer(themeReducer, { theme: 'light' });
+  const theme = localStorage.getItem('theme') as 'light' | 'dark';
+  const [state, dispatch] = useReducer(themeReducer, { theme: theme || 'light' });
 
   const themeName = state.theme === 'light' ? 'Light' : 'Dark';
   return (
@@ -32,5 +33,7 @@ export const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
 };
 
 function themeReducer(state: ThemeState): ThemeState {
-  return { theme: state.theme === 'light' ? 'dark' : 'light' };
+  const newTheme = state.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', newTheme);
+  return { theme: newTheme };
 }
